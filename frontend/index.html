@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Autonomous Agent · Document Builder</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <header class="topbar">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      Autonomous&nbsp;Agent
+    </div>
+    <div class="topbar-sub">Python + FastAPI + Gemini · Tool-Orchestrated Document Builder</div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <h1>Turn a sentence into a <span class="highlight">polished document</span>.</h1>
+      <p class="hero-sub">
+        Describe what you need. The agent plans its own steps, calls tools for real
+        supporting data, drafts every section, and hands you back a ready Word document.
+      </p>
+    </section>
+
+    <section class="panel input-panel">
+      <label for="requestInput" class="panel-label">Your request</label>
+      <textarea
+        id="requestInput"
+        placeholder="e.g. Draft a project proposal for migrating our customer support system to an AI chatbot, including budget and timeline."
+        rows="4"
+      ></textarea>
+
+      <div class="quick-examples">
+        <span class="quick-title">Try:</span>
+        <button class="chip" data-fill="Create meeting minutes for a product roadmap sync, we discussed Q3 priorities, hiring, and a delayed vendor integration.">Meeting minutes</button>
+        <button class="chip" data-fill="I need something for leadership about our new feature, keep it business-y, cover impact and next steps, you decide the rest.">Ambiguous request</button>
+        <button class="chip" data-fill="Write a technical design document for a rate-limiting middleware for our public API.">Technical design</button>
+      </div>
+
+      <button id="generateBtn" class="generate-btn">
+        <span class="btn-text">Run Agent</span>
+        <span class="btn-spinner" hidden></span>
+      </button>
+    </section>
+
+    <section id="statusPanel" class="panel status-panel" hidden>
+      <div class="status-header">
+        <div class="pulse-dot"></div>
+        <span id="statusText">Agent is planning…</span>
+      </div>
+    </section>
+
+    <section id="resultsPanel" class="results" hidden>
+
+      <div class="panel">
+        <h2 class="section-title">🧠 Agent-Generated Task List</h2>
+        <ul id="taskList" class="task-list"></ul>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title">⚙️ Execution Log</h2>
+        <ul id="executionLog" class="exec-list"></ul>
+      </div>
+
+      <div class="panel highlight-panel">
+        <h2 class="section-title">🔧 Engineering Improvement</h2>
+        <p id="engineeringNote"></p>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title">🔍 Self-Reflection</h2>
+        <p id="reflectionNote"></p>
+      </div>
+
+      <div class="panel download-panel">
+        <h2 class="section-title">📄 Final Document</h2>
+        <p id="docMessage"></p>
+        <a id="downloadLink" class="download-btn" href="#" download>
+          Download .docx
+        </a>
+      </div>
+
+    </section>
+
+    <section id="errorPanel" class="panel error-panel" hidden>
+      <strong>Something went wrong:</strong>
+      <p id="errorText"></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Built with FastAPI · Gemini (free tier) · python-docx · SQLite — 100% local, no paid services.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

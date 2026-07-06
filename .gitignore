@@ -1,0 +1,28 @@
+# Environment & secrets
+.env
+
+# Virtual environment
+venv/
+env/
+*.venv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Database
+data.db
+
+# Generated documents (keep the folder, ignore generated files)
+outputs/*.docx
+!outputs/.gitkeep
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
