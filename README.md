@@ -58,11 +58,11 @@ to call and with what arguments** from a small registry
 - `get_current_datetime` — real timestamp
 
 The executor (`app/agent/executor.py`) actually calls those Python functions,
-and feeds their real output back into the LLM prompt for that section —
+and feeds their real output back into the LLM prompt for that section,
 so figures in the final document come from executed code, not from the
 model just making numbers up. If a tool call fails, the step degrades
 gracefully (logged as `failed`, execution continues) instead of crashing
-the whole request — a bit of error handling & recovery layered on top.
+the whole request, a bit of error handling & recovery layered on top.
 
 ---
 
@@ -165,7 +165,6 @@ requests.
 ## Safety & Cost
 
 - 100% free: Gemini free tier + local SQLite, no paid services.
-- Secrets stay local: `.env` is git-ignored, never committed.
 - Guardrails reject empty/oversized/prompt-injection-style input before any
   API call is made.
 - Content written into the `.docx` is sanitized to strip non-printable
