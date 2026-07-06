@@ -1,4 +1,4 @@
-# Autonomous Agent — Document Builder
+# AgentForge AI -> Autonomous AI Planning & Intelligent Document Generation Platform
 
 A Python autonomous AI agent that takes a natural-language request, plans its
 own execution steps, orchestrates tools for real supporting data, drafts a
