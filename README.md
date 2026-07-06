@@ -2,7 +2,7 @@
 
 A Python autonomous AI agent that takes a natural-language request, plans its
 own execution steps, orchestrates tools for real supporting data, drafts a
-professional business document, and returns a polished Microsoft Word file —
+professional business document, and returns a polished Microsoft Word file-
 end to end, through a single API call and a live demo UI.
 
 Built for the **Python AI Engineer – Autonomous Agents** 60-minute build
@@ -170,3 +170,5 @@ requests.
   API call is made.
 - Content written into the `.docx` is sanitized to strip non-printable
   characters.
+---
+- Built with ❤️ using Python, FastAPI and Generative AI.
